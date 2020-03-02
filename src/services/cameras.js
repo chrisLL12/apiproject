@@ -1,15 +1,12 @@
 import knex from '../database';
 
-// Define function
-const filterById = id => {
-    return (query) => query.where('id', id);
+export const getCameras = async id => {
+        await knex('cameras')
+            .select('cameras.title',
+            'users.display_name')
+            .join('categories', 'categories.cameras_id', 'cameras.id')
+            .join('users', 'categories.users_id', 'users.id')
+            .where({ 'cameras.id': id });
 };
-
-// Create base query
-const cameraBaseQuery = knex('cameras');
-
-// Create and apply query builders using function to the base query
-export const getCameraById = async id =>
-    filterById(await cameraBaseQuery.where({ 'cameras.id' : id }))[0];
 
 

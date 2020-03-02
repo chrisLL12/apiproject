@@ -1,15 +1,18 @@
-import { getCameraById } from "../services/cameras";
+import { getCameras } from "../services/cameras";
 
-const wrapSubmitter = camera => {
-    camera.submitter = { id: camera.submitter_id };
-    delete camera.submitter_id;
-    return camera;
-};
+// const wrapSubmitter = camera => {
+//     camera.submitter = { id: camera.cameras.id };
+//     delete camera.cameras.id;
+//     return camera;
+// };
 
 const resolvers = {
     //addDrink
     //getDrink
-    camera: async ({ id }) => wrapSubmitter(await getCameraById(id))
+    cameras: async({ id }) => [{id: 'fake camera'}]
+    //cameras: async ({ id }) => await getCameras(id)
+
+
 };
 
 

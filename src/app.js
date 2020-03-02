@@ -24,16 +24,3 @@ app.listen(8000, () =>
 export default app;
 
 
-
-// // Test data
-// const fakeData = {
-//     'cool': {job: 'mailman', pet: 'cat'},
-//     'dood': {job: 'student', pet: 'dog'},
-//     'swet': {job: 'teacher', pet: 'bird'}
-// };
-
-// app.get('/api/users', (req, res) => {
-//     const allUsernames = Object.keys(fakeData);
-//     console.log(allUsernames);
-//     res.send(allUsernames);
-// });
