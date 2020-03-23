@@ -1,4 +1,5 @@
 import { getCameras } from "../services/cameras";
+import { addCamera } from "../services/cameras";
 
 // const wrapSubmitter = camera => {
 //     camera.submitter = { id: camera.cameras.id };
@@ -8,9 +9,10 @@ import { getCameras } from "../services/cameras";
 
 const resolvers = {
     //addDrink
+    addNewCamera: async ({ camera }) => await addCamera(camera),
+
     //getDrink
-    cameras: async({ id }) => [{id: 'fake camera'}]
-    //cameras: async ({ id }) => await getCameras(id)
+    cameras: async({ id }) => getCameras(id)
 
 
 };

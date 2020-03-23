@@ -6,11 +6,41 @@
 </head>
 <body>
     <h1>Welcome to Camera Shop!</h1>
-        Name: <input id="nameBox" type="text" size="20"/>
-        <button id="allCamerasButton">Get all cameras</button>
-    <hr/>
+    <h3>Add a Camera!</h3>
+    <form id="addForm">
+        <ul>
+            <li>
+                <label for="addCamera">Camera:</label>
+                <input id="addCamera" name="title" placeholder="Add a camera!" />
+            </li>
+            <li>
+                <input id="addRating" name="rating" />
+            </li>
+            <li>
+                <label for="addReview">Review:</label>
+                <input id="addReview" name="review" placeholder="Write your review" />
+            </li>
 
-    <div id="status"></div>
+            <li>
+                <input id="submit-button" type="submit" value="Submit" />
+            </li>
+        </ul>
+    </form>
+    <div>
+        <button id="tx">Camera TX 221</button>
+        <button id="px">SmallCamera PX 2</button>
+        <button id="rte">SlimCamera RTE 500</button>
+        <button id="pr">SuperPixels PR 400</button>
+        <button id="rte2">LTCamera RTE 250</button>
+    <hr/>
+    </div>
+
+    <div>
+        <div id="status"></div>
+        <div id="status2"></div>
+        <div id="status3"></div>
+<!--        <select name="cameras" id="camera-select"></select>--> <!-- select dropdown for camera -->
+    </div>
 
     <script
             src="https://code.jquery.com/jquery-3.4.1.min.js"

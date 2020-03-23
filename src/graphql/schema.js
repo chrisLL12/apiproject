@@ -2,15 +2,23 @@ import { buildSchema } from "graphql"
 
 export default buildSchema(`
         type Query {
-        cameras(id: ID!): [Camera]
+        cameras(id: ID!): Camera
     }
         type Camera {
-            id: ID!
             title: String!
             rating: Int!
             review: String!
-            submitter: ID
     }
+    
+   type Mutation { 
+        addNewCamera (camera: CameraInput!): Camera    
+    }
+    
+    input CameraInput { 
+            title: String!
+            rating: Int!
+            review: String!   
+     }
     
 `);
 
